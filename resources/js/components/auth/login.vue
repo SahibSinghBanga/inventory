@@ -46,6 +46,13 @@
 
 <script type="text/javascript">
     export default {
+        created() {
+            if (User.loggedIn()) {
+                this.$router.push({
+                    name: 'home'
+                })
+            }
+        },
         data() {
             return {
                 form: {
@@ -57,8 +64,23 @@
         methods: {
             login() {
                 axios.post('api/auth/login', this.form)
-                    .then(res => User.responseAfterLogin(res))
-                    .catch(error => console.log(error.response.data))
+                    .then(res => {
+                        User.responseAfterLogin(res)
+                        Toast.fire({
+                            icon: 'success',
+                            title: 'Signed in successfully'
+                        })
+                        this.$router.push({
+                            name: 'home'
+                        })
+                    })
+                    .catch(error => this.errors = error.response.data.errors)
+                    .catch(
+                        Toast.fire({
+                            icon: 'warning',
+                            title: 'Invalid Email or Password'
+                        })
+                    )
             }
         }
     }
