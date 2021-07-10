@@ -32,6 +32,7 @@
                                         </div>
                                     </form>
                                     <hr>
+                                    <hr>
                                     <div class="text-center">
                                         <router-link to="/" class="font-weight-bold small">Already have an account?</router-link>
                                     </div>

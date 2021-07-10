@@ -30,6 +30,7 @@
                                         </div>
                                     </form>
                                     <hr>
+                                    <hr>
                                     <div class="text-center">
                                         <router-link to="register" class="font-weight-bold small">Create an Account!</router-link>
                                     </div>
