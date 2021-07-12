@@ -2228,6 +2228,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   created: function created() {
     if (!User.loggedIn()) {
@@ -2302,6 +2310,14 @@ var _created$data$created;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -46656,6 +46672,8 @@ var render = function() {
                       _c("div", { staticClass: "form-group" }, [
                         _c("div", { staticClass: "form-row" }, [
                           _c("div", { staticClass: "col-md-6" }, [
+                            _c("small", [_vm._v("Employee name")]),
+                            _vm._v(" "),
                             _c("input", {
                               directives: [
                                 {
@@ -46694,6 +46712,8 @@ var render = function() {
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "col-md-6" }, [
+                            _c("small", [_vm._v("Email")]),
+                            _vm._v(" "),
                             _c("input", {
                               directives: [
                                 {
@@ -46738,6 +46758,8 @@ var render = function() {
                       _c("div", { staticClass: "form-group" }, [
                         _c("div", { staticClass: "form-row" }, [
                           _c("div", { staticClass: "col-md-6" }, [
+                            _c("small", [_vm._v("Address")]),
+                            _vm._v(" "),
                             _c("input", {
                               directives: [
                                 {
@@ -46778,6 +46800,8 @@ var render = function() {
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "col-md-6" }, [
+                            _c("small", [_vm._v("Salary")]),
+                            _vm._v(" "),
                             _c("input", {
                               directives: [
                                 {
@@ -46822,6 +46846,8 @@ var render = function() {
                       _c("div", { staticClass: "form-group" }, [
                         _c("div", { staticClass: "form-row" }, [
                           _c("div", { staticClass: "col-md-6" }, [
+                            _c("small", [_vm._v("Joining date")]),
+                            _vm._v(" "),
                             _c("input", {
                               directives: [
                                 {
@@ -46864,6 +46890,8 @@ var render = function() {
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "col-md-6" }, [
+                            _c("small", [_vm._v("NID")]),
+                            _vm._v(" "),
                             _c("input", {
                               directives: [
                                 {
@@ -46902,6 +46930,8 @@ var render = function() {
                       _c("div", { staticClass: "form-group" }, [
                         _c("div", { staticClass: "form-row" }, [
                           _c("div", { staticClass: "col-md-6" }, [
+                            _c("small", [_vm._v("Phone")]),
+                            _vm._v(" "),
                             _c("input", {
                               directives: [
                                 {
@@ -46948,6 +46978,8 @@ var render = function() {
                       _c("div", { staticClass: "form-group" }, [
                         _c("div", { staticClass: "form-row" }, [
                           _c("div", { staticClass: "col-md-6" }, [
+                            _c("small", [_vm._v("Profile picture")]),
+                            _vm._v(" "),
                             _c("div", { staticClass: "custom-file" }, [
                               _c("input", {
                                 staticClass: "custom-file-input",
@@ -46974,7 +47006,7 @@ var render = function() {
                               : _vm._e()
                           ]),
                           _vm._v(" "),
-                          _c("div", { staticClass: "col-md-6" }, [
+                          _c("div", { staticClass: "col-md-6 mt-4" }, [
                             _c("img", {
                               staticStyle: { height: "40px", width: "40px" },
                               attrs: { src: _vm.form.photo }
@@ -47084,6 +47116,8 @@ var render = function() {
                       _c("div", { staticClass: "form-group" }, [
                         _c("div", { staticClass: "form-row" }, [
                           _c("div", { staticClass: "col-md-6" }, [
+                            _c("small", [_vm._v("Employee name")]),
+                            _vm._v(" "),
                             _c("input", {
                               directives: [
                                 {
@@ -47122,6 +47156,8 @@ var render = function() {
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "col-md-6" }, [
+                            _c("small", [_vm._v("Email")]),
+                            _vm._v(" "),
                             _c("input", {
                               directives: [
                                 {
@@ -47166,6 +47202,8 @@ var render = function() {
                       _c("div", { staticClass: "form-group" }, [
                         _c("div", { staticClass: "form-row" }, [
                           _c("div", { staticClass: "col-md-6" }, [
+                            _c("small", [_vm._v("Address")]),
+                            _vm._v(" "),
                             _c("input", {
                               directives: [
                                 {
@@ -47206,6 +47244,8 @@ var render = function() {
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "col-md-6" }, [
+                            _c("small", [_vm._v("Salary")]),
+                            _vm._v(" "),
                             _c("input", {
                               directives: [
                                 {
@@ -47250,6 +47290,8 @@ var render = function() {
                       _c("div", { staticClass: "form-group" }, [
                         _c("div", { staticClass: "form-row" }, [
                           _c("div", { staticClass: "col-md-6" }, [
+                            _c("small", [_vm._v("Joining date")]),
+                            _vm._v(" "),
                             _c("input", {
                               directives: [
                                 {
@@ -47292,6 +47334,8 @@ var render = function() {
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "col-md-6" }, [
+                            _c("small", [_vm._v("NID")]),
+                            _vm._v(" "),
                             _c("input", {
                               directives: [
                                 {
@@ -47330,6 +47374,8 @@ var render = function() {
                       _c("div", { staticClass: "form-group" }, [
                         _c("div", { staticClass: "form-row" }, [
                           _c("div", { staticClass: "col-md-6" }, [
+                            _c("small", [_vm._v("Phone")]),
+                            _vm._v(" "),
                             _c("input", {
                               directives: [
                                 {
@@ -47376,6 +47422,8 @@ var render = function() {
                       _c("div", { staticClass: "form-group" }, [
                         _c("div", { staticClass: "form-row" }, [
                           _c("div", { staticClass: "col-md-6" }, [
+                            _c("small", [_vm._v("Profile picture")]),
+                            _vm._v(" "),
                             _c("div", { staticClass: "custom-file" }, [
                               _c("input", {
                                 staticClass: "custom-file-input",
@@ -47402,7 +47450,7 @@ var render = function() {
                               : _vm._e()
                           ]),
                           _vm._v(" "),
-                          _c("div", { staticClass: "col-md-6" }, [
+                          _c("div", { staticClass: "col-md-6 mt-4" }, [
                             _c("img", {
                               staticStyle: { height: "40px", width: "40px" },
                               attrs: { src: _vm.form.photo }

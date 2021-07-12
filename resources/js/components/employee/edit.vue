@@ -18,10 +18,12 @@
                                         <div class="form-group">
                                             <div class="form-row">
                                                 <div class="col-md-6">
+                                                    <small>Employee name</small>
                                                     <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Enter Full Name" v-model="form.name">
                                                     <small class="text-danger" v-if="errors.name"> {{ errors.name[0] }} </small>
                                                 </div>
                                                 <div class="col-md-6">
+                                                    <small>Email</small>
                                                     <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Enter Your Email" v-model="form.email">
                                                     <small class="text-danger" v-if="errors.email"> {{ errors.email[0] }} </small>
                                                 </div>
@@ -31,10 +33,12 @@
                                         <div class="form-group">
                                             <div class="form-row">
                                                 <div class="col-md-6">
+                                                    <small>Address</small>
                                                     <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Enter Your Address" v-model="form.address">
                                                     <small class="text-danger" v-if="errors.address"> {{ errors.address[0] }} </small>
                                                 </div>
                                                 <div class="col-md-6">
+                                                    <small>Salary</small>
                                                     <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Enter Your Salary" v-model="form.salary">
                                                     <small class="text-danger" v-if="errors.salary"> {{ errors.salary[0] }} </small>
                                                 </div>
@@ -44,10 +48,12 @@
                                         <div class="form-group">
                                             <div class="form-row">
                                                 <div class="col-md-6">
+                                                    <small>Joining date</small>
                                                     <input type="date" class="form-control" id="exampleInputFirstName" placeholder="Enter Your Joining Date" v-model="form.joining_date">
                                                     <small class="text-danger" v-if="errors.joining_date"> {{ errors.joining_date[0] }} </small>
                                                 </div>
                                                 <div class="col-md-6">
+                                                    <small>NID</small>
                                                     <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Enter Your NID" v-model="form.nid">
                                                     <small class="text-danger" v-if="errors.nid"> {{ errors.nid[0] }} </small>
                                                 </div>
@@ -57,6 +63,7 @@
                                         <div class="form-group">
                                             <div class="form-row">
                                                 <div class="col-md-6">
+                                                    <small>Phone</small>
                                                     <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Enter Your Phone Number" v-model="form.phone">
                                                     <small class="text-danger" v-if="errors.phone"> {{ errors.phone[0] }} </small>
                                                 </div>
@@ -69,13 +76,14 @@
                                         <div class="form-group">
                                             <div class="form-row">
                                                 <div class="col-md-6">
+                                                    <small>Profile picture</small>
                                                     <div class="custom-file">
                                                         <input type="file" class="custom-file-input" id="customFile" @change="onFileSelected">
                                                         <label class="custom-file-label" for="customFile">Choose file</label>
                                                     </div>
                                                     <small class="text-danger" v-if="errors.photo"> {{ errors.photo[0] }} </small>
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-6 mt-4">
                                                     <img :src="form.photo" style="height: 40px; width: 40px;">
                                                 </div>
                                             </div>
