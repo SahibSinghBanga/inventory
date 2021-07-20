@@ -3,28 +3,26 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Employee;
+use App\Models\Supplier;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Intervention\Image\ImageManagerStatic as Image;
 
-class EmployeeController extends Controller
+class SupplierController extends Controller
 {
     public function index()
     {
-        $employees = Employee::all();
-        return response()->json($employees);
+        $suppliers = Supplier::all();
+        return response()->json($suppliers);
     }
 
     public function store(Request $request)
     {
         $validateData = $request->validate([
-            'name' => 'required|unique:employees,name',
+            'name' => 'required|unique:suppliers,name',
             'email' => 'required',
-            'phone' => 'required|unique:employees,phone',
-            'salary' => 'required',
+            'phone' => 'required|unique:suppliers,phone',
             'address' => 'required',
-            'joining_date' => 'required',
         ]);
 
         if ($request->photo) {
@@ -34,55 +32,48 @@ class EmployeeController extends Controller
 
             $name = time() . '.' . $ext;
             $img = Image::make($request->photo)->resize(240, 200);
-            $upload_path = 'backend/employee/';
+            $upload_path = 'backend/supplier/';
             $image_url = $upload_path . $name;
             $img->save($image_url);
         }
 
-        $employee = new Employee;
-        $employee->name = $request->name;
-        $employee->email = $request->email;
-        $employee->phone = $request->phone;
-        $employee->salary = $request->salary;
-        $employee->address = $request->address;
-        $employee->nid = $request->nid;
-        $employee->joining_date = $request->joining_date;
-        $employee->photo = $image_url ?? null;
-
-        $employee->save();
+        Supplier::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'shop_name' => $request->shop_name,
+            'address' => $request->address,
+            'photo' => $image_url ?? null,
+        ]);
     }
 
     public function show($id)
     {
-        $employee = Employee::find($id);
-        return response()->json($employee);
+        $supplier = Supplier::find($id);
+        return response()->json($supplier);
     }
 
-    public function update(Request $request, Employee $employee)
+    public function update(Request $request, Supplier $supplier)
     {
         $validateData = $request->validate([
             'name' => [
-                'required',
-                Rule::unique('employees')->ignore($employee->id, 'id')
+                "required",
+                Rule::unique('suppliers')->ignore($supplier->id, 'id')
             ],
             'email' => 'required',
             'phone' => [
                 'required',
-                Rule::unique('employees')->ignore($employee->id, 'id')
+                Rule::unique('suppliers')->ignore($supplier->id, 'id')
             ],
-            'salary' => 'required',
             'address' => 'required',
-            'joining_date' => 'required',
         ]);
 
         $data  = array();
         $data['name'] = $request->name;
         $data['email'] = $request->email;
         $data['phone'] = $request->phone;
-        $data['salary'] = $request->salary;
+        $data['shop_name'] = $request->shop_name;
         $data['address'] = $request->address;
-        $data['nid'] = $request->nid;
-        $data['joining_date'] = $request->joining_date;
         $newImage = $request->newPhoto;
 
         if ($newImage) {
@@ -92,33 +83,33 @@ class EmployeeController extends Controller
 
             $name = time() . '.' . $ext;
             $img = Image::make($newImage)->resize(240, 200);
-            $upload_path = 'backend/employee/';
+            $upload_path = 'backend/supplier/';
             $newImageUrl = $upload_path . $name;
             $success = $img->save($newImageUrl);
 
             if ($success) {
                 $data['photo'] = $newImageUrl;
-                if (strpos($employee->photo, '.wip')) {
-                    $oldPhoto = $employee->photo;
+                if (strpos($supplier->photo, '.wip')) {
+                    $oldPhoto = $supplier->photo;
                     $oldPhoto = explode('.wip/', $oldPhoto)[1];
                     unlink($oldPhoto);
                 }
             }
         }
 
-        $employee->update($data);
-        $employee->save();
+        $supplier->update($data);
+        $supplier->save();
     }
 
     public function destroy($id)
     {
-        $employee = Employee::find($id);
-        $photo = $employee->photo;
+        $supplier = Supplier::find($id);
+        $photo = $supplier->photo;
 
         if ($photo) {
             unlink($photo);
         }
 
-        $employee->delete();
+        $supplier->delete();
     }
 }
