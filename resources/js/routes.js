@@ -15,6 +15,11 @@ let supplier = require('./components/supplier/index.vue').default;
 let storeSupplier = require('./components/supplier/create.vue').default;
 let editSupplier = require('./components/supplier/edit.vue').default;
 
+// Category Routes
+let category = require('./components/category/index.vue').default;
+let storeCategory = require('./components/category/create.vue').default;
+let editCategory = require('./components/category/edit.vue').default;
+
 export const routes = [
   { path: '/', component: login, name: '/' },
   { path: '/register', component: register, name: 'register' },
@@ -29,4 +34,8 @@ export const routes = [
   { path: '/supplier', component: supplier, name: 'supplier' },
   { path: '/store-supplier', component: storeSupplier, name: 'store-supplier' },
   { path: '/edit-supplier/:id', component: editSupplier, name: 'edit-supplier' },
+
+  { path: '/category', component: category, name: 'category' },
+  { path: '/store-category', component: storeCategory, name: 'store-category' },
+  { path: '/edit-category/:id', component: editCategory, name: 'edit-category' },
 ]
